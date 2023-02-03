@@ -2,7 +2,7 @@
 
 This repo holds the website for the [IGE Developers Hub](https://github.com/igedevops/spec).
 
-You may view the site at [igecloud.dev](https://developer.igecloud.dev).
+You may view the site at [igecloud.dev](https://igecloud.dev).
 
 ## Building
 
