@@ -1,6 +1,6 @@
 # Developers Containers Site & Terminals
 
-This repo holds the website for the [IGE Developers Hub](https://github.com/igedevops/spec).
+This repo holds the website for the [IGE Developers Hub](https://github.com/igeclouds/spec).
 
 You may view the site at [igecloud.dev](https://igecloud.dev).
 
@@ -12,7 +12,7 @@ If you'd like to build and preview the site yourself, we make it as smooth as po
 
 You may build GitHub Pages sites with [Jekyll](https://jekyllrb.com/), which is a Ruby gem. You could manually install these tools on your machine, or you can easily get started with the setup you already need through a dev container!
 
-You may review this repo in the [`.devcontainer`](https://github.com/igedevops/containers.dev/tree/gh-pages/.igedevops) folder.
+You may review this repo in the [`.devcontainer`](https://github.com/igeclouds/containers.dev/tree/gh-pages/.igedevops) folder.
 
 It is from this [Jekyll definition](https://github.com/microsoft/vscode-dev-containers/tree/main/containers/jekyll).
 
@@ -28,8 +28,8 @@ It is from this [Jekyll definition](https://github.com/microsoft/vscode-dev-cont
 
 If you'd like to provide feedback on or contribute to the dev containers website, please feel free to open an issue or PR in this repo.
 
-For issues on and contributions to the dev container specification itself, please visit the [Dev Containers Spec repo](https://github.com/igedevops/spec).
+For issues on and contributions to the dev container specification itself, please visit the [Dev Containers Spec repo](https://github.com/igecloud/spec).
 
 ## License
 
-License for this repository: https://github.com/igedevops/containers.dev/blob/gh-pages/LICENSE.
+License for this repository: https://github.com/igecloud/containers.dev/blob/gh-pages/LICENSE.
