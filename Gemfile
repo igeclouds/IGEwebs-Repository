@@ -1,15 +1,15 @@
 source "https://rubygems.org"
 ruby RUBY_VERSION
 
-gem "jekyll", "3.6.2"
+gem "jekyll", "3.9.0"
 
 # to use GitHub Pages
 # gem "github-pages", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem "jemoji"
-   gem "github-pages"
+   gem "jemoji", ">= 0.10.0"
+   gem "github-pages", ">= 207"
    gem "jekyll-remote-theme"
 end
 
