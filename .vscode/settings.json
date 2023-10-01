@@ -1,4 +1,34 @@
 {
     "DockerRun.DisableAutoGenerateConfig": true,
-    "remote.SSH.remoteServerListenOnSocket": true
+    "remote.SSH.remoteServerListenOnSocket": true,
+    "screencastMode.keyboardOptions": {
+        "showCommandGroups": true
+    },
+    "window.autoDetectColorScheme": true,
+    "docker-explorer.executionCommand": "docker",
+    "scm.alwaysShowRepositories": true,
+    "scm.alwaysShowActions": true,
+    "workbench.settings.openDefaultSettings": true,
+    "workbench.settings.useSplitJSON": true,
+    "workbench.editor.autoLockGroups": {
+        "workbench.editorinputs.searchEditorInput": true,
+        "workbench.editor.chatSession": true,
+        "jupyter-notebook": true,
+        "github-issues": true,
+        "databricks-notebook": true,
+        "cweijan.markdownViewer": true,
+        "imagePreview.previewEditor": true,
+        "vscode.audioPreview": true,
+        "vscode.videoPreview": true,
+        "jsProfileVisualizer.cpuprofile.table": true,
+        "jsProfileVisualizer.heapprofile.table": true,
+        "cweijan.officeViewer": true,
+        "gc-excelviewer-excel-editor": true,
+        "gc-excelviewer-csv-editor": true,
+        "cweijan.htmlViewer": true,
+        "cweijan.classViewer": true,
+        "workbench.input.interactive": true,
+        "mainThreadWebview-markdown.preview": true
+    },
+    "terminal.integrated.allowMnemonics": true
 }
