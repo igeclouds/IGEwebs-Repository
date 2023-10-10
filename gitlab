@@ -1,0 +1,61 @@
+version: '3.1'
+
+services:
+  frontproxy:
+    restart: always
+    image: jwilder/nginx-proxy
+    labels:
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "certs-volume:/etc/nginx/certs:ro"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+  nginx-letsencrypt-companion:
+    restart: always
+    image: nginxproxy/acme-companion
+    volumes:
+      - "certs-volume:/etc/nginx/certs"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: always
+    hostname: 'git.igecloud.dev'
+    environment:
+      VIRTUAL_HOST: 'git.igecloud.dev'
+      LETSENCRYPT_HOST: 'igecloud.dev'
+      LETSENCRYPT_EMAIL: 'admin@igecloud.dev'
+      VIRTUAL_PROTO: 'https'
+      VIRTUAL_PORT: '443'
+      CERT_NAME: 'redacted.com'
+      GITLAB_OMNIBUS_CONFIG: |
+      # Email setup
+        gitlab_rails['gitlab_email_enabled'] = true
+        gitlab_rails['gitlab_email_from'] = 'admin@igecloud.dev'
+        gitlab_rails['gitlab_email_display_name'] = 'Gitlab@igecloud.dev'
+        gitlab_rails['gitlab_email_reply_to'] = 'admin@igecloud.dev'
+        gitlab_rails['smtp_enable'] = true
+        gitlab_rails['smtp_address'] = 'mail@igecloud.dev'
+        gitlab_rails['smtp_port'] = 587
+        gitlab_rails['smtp_user_name'] = 'admin@igecloud.dev'
+        gitlab_rails['smtp_password'] = 'igecloud'
+        gitlab_rails['smtp_domain'] = 'git.igecloud.dev'
+        gitlab_rails['smtp_authentication'] = 'login'
+        gitlab_rails['smtp_enable_starttls_auto'] = true
+        gitlab_rails['gitlab_root_email'] = 'admin@igecloud.dev'
+        # HTTPS Setup
+        letsencrypt['enable'] = false
+        external_url 'https://git.igecloud.dev'
+        gitlab_rails['gitlab_https'] = true
+        gitlab_rails['gitlab_port'] = 443
+    ports:
+      - '22:22'
+    volumes:
+      - ./config:/etc/gitlab
+      - ./logs:/var/log/gitlab
+      - ./data:/var/opt/gitlab
+volumes:
+  certs-volume:
