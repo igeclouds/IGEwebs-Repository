@@ -1,0 +1,11 @@
+{
+    "editor.columnSelection": true,
+    "editor.defaultColorDecorators": true,
+    "editor.experimental.asyncTokenizationLogging": true,
+    "editor.experimental.asyncTokenizationVerification": true,
+    "editor.suggest.preview": true,
+    "editor.suggest.showStatusBar": true,
+    "files.autoGuessEncoding": true,
+    "testing.automaticallyOpenPeekViewDuringAutoRun": true,
+    "testing.alwaysRevealTestOnStateChange": true
+}
